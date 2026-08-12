@@ -1,0 +1,6 @@
+{
+  "name": "Integrity-OS",
+  "description": "Digital infrastructure making development and post-conflict recovery transparent, traceable, participatory, and accountable.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

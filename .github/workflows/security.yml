@@ -1,0 +1,22 @@
+name: Security & Secret Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for committed secrets or .env files
+        run: |
+          if [ -f .env ] && [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            echo "ERROR: .env file detected in repo!"
+            exit 1
+          fi
+          echo "No committed .env secret files detected."

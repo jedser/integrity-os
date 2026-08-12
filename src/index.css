@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide non-printable app UI */
+  nav,
+  header,
+  footer,
+  aside,
+  .print\:hidden,
+  button,
+  select,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Optimize printable report box */
+  #printable-report {
+    display: block !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Prevent internal page breaks inside key tables and cards */
+  tr,
+  .avoid-break,
+  .page-break-inside-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Maintain background tint fills in tables and badges */
+  th,
+  td,
+  .bg-slate-50,
+  .bg-slate-100,
+  .bg-indigo-50,
+  .bg-emerald-50,
+  .bg-amber-50,
+  .bg-rose-50 {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
